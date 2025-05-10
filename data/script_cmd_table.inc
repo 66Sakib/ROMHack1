@@ -9,7 +9,6 @@
 	.endm
 	.endif
 
-
 	enum_start
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 	.align 2
@@ -242,6 +241,10 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_WARPWHITEFADE                 ScrCmd_warpwhitefade                  @ 0xe0
 	script_cmd_table_entry SCR_OP_BUFFERCONTESTNAME             ScrCmd_buffercontestname              @ 0xe1
 	script_cmd_table_entry SCR_OP_BUFFERITEMNAMEPLURAL          ScrCmd_bufferitemnameplural           @ 0xe2
+  script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit                   @ 0xe3
+	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus                @ 0xe4
+	script_cmd_table_entry SCR_OP_BUFFEROUTFITSTR               ScrCmd_bufferoutfitstr                @ 0xe5
+	script_cmd_table_entry SCR_OP_POKEMARTOUTFIT                ScrCmd_pokemartoutfit                 @ 0xe6
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
