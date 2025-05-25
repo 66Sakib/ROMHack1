@@ -4,7 +4,7 @@
 void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys);
 void ClearPlayerAvatarInfo(void);
 void SetPlayerAvatarExtraStateTransition(u8, u8);
-bool8 TestPlayerAvatarFlags(u8);
+bool8 TestPlayerAvatarFlags(u32 flags);
 u8 GetPlayerAvatarSpriteId(void);
 void PlayerGetDestCoords(s16 *, s16 *);
 u8 GetPlayerFacingDirection(void);

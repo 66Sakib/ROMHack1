@@ -239,10 +239,9 @@ static const u8 sRivalAvatarGfxIds[][GENDER_COUNT] =
     [PLAYER_AVATAR_STATE_BIKE]       = {OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE,  OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE},
     [PLAYER_AVATAR_STATE_SURFING]    = {OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING,    OBJ_EVENT_GFX_RIVAL_MAY_SURFING},
     [PLAYER_AVATAR_STATE_UNDERWATER] = {OBJ_EVENT_GFX_BRENDAN_UNDERWATER,       OBJ_EVENT_GFX_MAY_UNDERWATER},
-
     [PLAYER_AVATAR_STATE_FIELD_MOVE] = {OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE, OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE},
     [PLAYER_AVATAR_STATE_FISHING]    = {OBJ_EVENT_GFX_BRENDAN_FISHING,          OBJ_EVENT_GFX_MAY_FISHING},
-    [PLAYER_AVATAR_STATE_WATERING]   = {OBJ_EVENT_GFX_BRENDAN_WATERING,         OBJ_EVENT_GFX_MAY_WATERING}
+    [PLAYER_AVATAR_STATE_WATERING]   = {OBJ_EVENT_GFX_BRENDAN_WATERING,         OBJ_EVENT_GFX_MAY_WATERING},
 };
 
 static const u8 sPlayerAvatarGfxIds[][GENDER_COUNT] =
@@ -1152,10 +1151,11 @@ void MovePlayerToMapCoords(s16 x, s16 y)
     MoveObjectEventToMapCoords(&gObjectEvents[gPlayerAvatar.objectEventId], x, y);
 }
 
-u8 TestPlayerAvatarFlags(u8 flag)
+bool8 TestPlayerAvatarFlags(u32 flags)
 {
-    return gPlayerAvatar.flags & flag;
+    return (gPlayerAvatar.flags & flags) ? TRUE : FALSE;
 }
+
 
 u8 GetPlayerAvatarFlags(void)
 {

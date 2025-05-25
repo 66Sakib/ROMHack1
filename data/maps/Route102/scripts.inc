@@ -73,6 +73,13 @@ Route102_EventScript_Allen::
 	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route102_EventScript_Red::
+   lock
+   faceplayer
+   giveitem ITEM_OUTFIT_BOX
+   release
+   end	
+
 Route102_Text_WatchMeCatchPokemon:
 	.string "WALLY: {PLAYER}…\n"
 	.string "POKéMON hide in tall grass like this,\l"
