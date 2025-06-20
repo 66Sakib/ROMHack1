@@ -9,6 +9,9 @@ static const u8 sText_OutfitDesc_UsualGreen[] = _(
 static const u8 sText_OutfitName_UnusualRed[] = _("UNUSUAL RED");
 static const u8 sText_OutfitDesc_UnusualRed[] = _(
     "Rather unusual,\nbut still basic\nOUTFIT.");
+
+static const u8 sText_OutfitName_NMay[] = _("Naked");
+static const u8 sText_OutfitDesc_NMay[] = _("Nude May.");
 #endif
 
 static const u16 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.4bpp");
@@ -138,8 +141,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
     [OUTFIT_UNUSUAL_RED] = {
-        .isHidden = TRUE,
-        .prices = { 200, 500 },
+        .isHidden = FALSE,
+        .prices = { 0, 0 },
         #if MODERN == 1
         .name = COMPOUND_STRING("UNUSUAL RED"),
         .desc = COMPOUND_STRING("Rather unusual,\nbut still basic\nOUTFIT."),
@@ -153,4 +156,20 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsRM = REGION_MAP_GFX(RSBrendan, RSMay),
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
     },
+   [OUTFIT_NMAY] = {
+    .isHidden = FALSE, // Set to TRUE if locked initially
+    .prices = { 0, 0 }, // Example prices (free if {0, 0})
+    #if MODERN == 1
+    .name = COMPOUND_STRING("Naked"),
+    .desc = COMPOUND_STRING("Nude May."),
+    #else
+    .name = sText_OutfitName_NMay,
+    .desc = sText_OutfitDesc_NMay,
+    #endif
+    .trainerPics = TRAINER_ID(BRENDAN, NMAY), // Assumes ALTMAY has trainer pics
+    .avatarGfxIds = AVATAR_GFX_ID(BRENDAN, BRENDAN),
+    .animGfxIds = ANIM_GFX_ID(BRENDAN, BRENDAN),
+    .iconsRM = REGION_MAP_GFX(Brendan, May),
+    .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
+},
 };

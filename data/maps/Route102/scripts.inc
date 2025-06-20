@@ -77,6 +77,8 @@ Route102_EventScript_Red::
    lock
    faceplayer
    giveitem ITEM_OUTFIT_BOX
+   unlockoutfit(OUTFIT_UNUSUAL_RED)
+   unlockoutfit(OUTFIT_NMAY)
    release
    end	
 
